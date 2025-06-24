@@ -39,7 +39,29 @@ def odd_words(words: list[str]) -> list[str]:
 
 print(odd_words(words))
 
+# Function to find words whose lenth deviates +/- 1 from the Avg word length
 
+def list_avg(words: list[str]) -> int:
+ i = 0
+ sum = 0
+ while i < len(words): 
+    if len(words[i]) > 0:
+      sum = sum + len(words[i]) 
+      avg = sum / len(words)
+    i = i + 1
+ return int(avg)
+  
+def average_words(words: list[str]) -> list[str]: 
+  deviation = range(-1, 2, 1)
+  list_of_avg_words = list()
+  i = 0 
+  while i < len(words):
+    if (list_avg(words) - len(words[i])) in deviation: 
+      list_of_avg_words.append(words[i])
+    i = i + 1 
+  return list_of_avg_words     
+
+print(average_words(words))
 
 
 
