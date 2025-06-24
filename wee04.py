@@ -1,6 +1,43 @@
+words = ["the", "bright", "sun", "was", "extinguish'd", "and", "stars", "did","wander", "darkling", "in", "eternal", "space"]
 
+# Function to find longest word in list of strings
 
+def longest_word(words: list[str]) -> str: 
+  i = 0
+  longest = words[i]
+  while i < len(words):
+    if len(words[i]) > len(longest):
+      longest = words[i]
+    i = i + 1   
+  return longest 
 
+print(longest_word(words))
+
+# Function to find the shortest word in a list of strings
+
+def shortest_word(words: list[str]) -> str:
+  i = 0
+  shortest = words[i]
+  while i < len(words):
+    if len(words[i]) < len(shortest):
+      shortest = words[i]
+    i = i + 1 
+  return shortest  
+
+print(shortest_word(words))
+
+# Function to return a list of words with a length = odd number
+
+def odd_words(words: list[str]) -> list[str]: 
+  list_of_odd_words = list()
+  i = 0 
+  while i < len(words): 
+    if len(words[i]) % 2 != 0:
+      list_of_odd_words.append(words[i])
+    i = i + 1
+  return list_of_odd_words  
+
+print(odd_words(words))
 
 
 
