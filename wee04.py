@@ -18,13 +18,17 @@ def longest_word(words: list[str]) -> str:
     if len(words[i]) > len(longest):
       longest = words[i]
  
- # Moves on to the nth string in the list until i = list length (meaning 
+ # Moves on to string number n+1 until i = list length (meaning 
  # no more strings are left to examine)   
     
     i = i + 1   
   return longest 
 
 print(longest_word(words))
+
+
+
+
 
 # Function to find the shortest word in a list of strings
 
@@ -44,13 +48,17 @@ def shortest_word(words: list[str]) -> str:
     if len(words[i]) < len(shortest):
       shortest = words[i]
  
- # Moves on to the nth string in the list until i = list length 
+ # Moves on to string number n+1 until i = list length 
  # (meaning no more strings are left to examine) 
  
     i = i + 1 
   return shortest  
 
 print(shortest_word(words))
+
+
+
+
 
 # Function to return a list of words with a length = odd number
 
@@ -71,12 +79,16 @@ def odd_words(words: list[str]) -> list[str]:
   
       list_of_odd_words.append(words[i])
 
-# Moves on to the nth string in the list until i = list length and there are no strings left to examine
+# Moves on to string number n+1 until i = list length and there are no strings left to examine
 
     i = i + 1
   return list_of_odd_words  
 
 print(odd_words(words))
+
+
+
+
 
 # Function to find words whose lenth deviates +/- 1 from the Avg word length
 
@@ -102,7 +114,7 @@ def list_avg(words: list[str]) -> int:
       
       avg = sum / len(words)
    
-# Moves on to the nth string in the list until none are left (i = list length)   
+# Moves on to string number n+1 until none are left (i = list length)   
    
     i = i + 1
  return int(avg)
@@ -130,15 +142,45 @@ def average_words(words: list[str]) -> list[str]:
      
       list_of_avg_words.append(words[i])
    
-# Moves on to the nth string in the list until none are left (i = list length) 
+# Moves on to string number n+1 until none are left (i = list length) 
    
     i = i + 1 
   return list_of_avg_words     
 
 print(average_words(words))
 
+foo = ["free", "orange", "oreos"]
 
+bar = ["beyond", "all", "reason"]
 
+# Function to find if an intersection between two lists exists
+
+def intersect(foo: list[str], bar: list[str]) -> bool: 
+  
+# Ensures that we begin from the first string 
+  
+  i = 0
+ 
+# Before we've reached the end of the list "foo", if the nth string
+# in the list is also in the list "bar", then return "True"
+ 
+  while i < len(foo): 
+    if foo[i] in bar:
+      return True
+
+# If the nth string is not in the list "bar", go to string number n+1
+
+    elif foo[i] not in bar:
+      i = i + 1 
+
+# If we've exhaused the list "foo" and its final string is not found
+# in the list "bar", then return "False" (no strings shared by the lists)
+
+  else: 
+     if i == len(foo) and foo[-1] not in bar:
+      return False 
+
+print(intersect(foo, bar))
 
 
 
